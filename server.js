@@ -7,8 +7,7 @@ const server = createServer((req, res) => {
   if(url === '/cinnabac.css') {
     fs.readFile('cinnabac.css', function(err,data){
       res.writeHead(200, {'Content-Type': 'text/css'});
-      res.write(data);
-      return res.end();
+      return res.end(data);
     });
     return;
   }
@@ -28,8 +27,7 @@ const server = createServer((req, res) => {
   }
   fs.readFile(file, function(err,data){
     res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(data);
-    return res.end();
+    return res.end(data);
   });
 }).listen(8080);
 
